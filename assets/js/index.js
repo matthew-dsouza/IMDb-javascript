@@ -22,7 +22,7 @@ const homePageSections = [
         path: "/movie/upcoming"
     },
     {
-        title: "Trending Movies",
+        title: "Weekly Trending Movies",
         path: "/trending/movie/week"
     },
     {
@@ -117,7 +117,7 @@ const heroBanner = function ({ results: movieList }) {
 
                 <p class="banner-text">${overview}</p>
 
-                <a href="./detail.html" class="btn">
+                <a href="./detail.html" class="btn" onclick="getMovieDetail(${id})">
                     <img src="./assets/images/play_circle.png" width="24" height="24" aria-hidden="true"
                         alt="play circle">
 
