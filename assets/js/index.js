@@ -62,7 +62,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api
         genreList[id] = name;
     }
 
-    fetchDataFromServer(`https://api.themoviedb.org/3/movie/popular/?api_key=${api_key}&page=1`, heroBanner);
+    fetchDataFromServer(`https://api.themoviedb.org/3/movie/popular/?api_key=${api_key}&page=1/`, heroBanner);
 
 });
 
@@ -154,7 +154,7 @@ const heroBanner = function ({ results: movieList }) {
      * (Top rated, Upcoming, Trending movies)
     */
     for (const { title, path } of homePageSections) {
-        fetchDataFromServer(`https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1`, createMovieList, title);
+        fetchDataFromServer(`https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1/`, createMovieList, title);
     }
 
 }

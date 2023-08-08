@@ -144,7 +144,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
 
     pageContent.appendChild(movieDetail);
 
-    fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1`, addSuggestedMovies);
+    fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1/`, addSuggestedMovies);
 
 });
 
