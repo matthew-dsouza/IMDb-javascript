@@ -39,6 +39,11 @@ const getDirectors = function (crewList) {
     return directorList.join(", ");
 }
 
+// return only trailers and teasers as array
+const filterVideos = function (videosList) {
+    return videosList.filter(({ type, site }) => (type === "Trailer" || type === "Teaser") && site === "YouTube");
+}
+
 fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&append_to_response=casts,videos,images,releases`, function (movie) {
 
     const {
@@ -126,6 +131,47 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
 
     for (const { key, name } of filterVideos(videos)) {
 
+        const videoCard = document.createElement("div");
+        videoCard.classList.add("video-card");
+
+        videoCard.innerHTML = `
+            <iframe width="500" height="294" src="https://www.youtube.com/embed/${key}?&theme=dark&color=white&rel=0" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" loading="lazy"></iframe>
+        `;
+
+        movieDetail.querySelector(".slider-inner").appendChild(videoCard);
     }
 
+    pageContent.appendChild(movieDetail);
+
+    fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1`, addSuggestedMovies);
+
 });
+
+
+
+const addSuggestedMovies = function({ results: movieList }, title){
+
+    const movieListElem = document.createElement("section");
+    movieListElem.classList.add("movie-list");
+    movieListElem.ariaLabel = "You May Also Like";
+
+    movieListElem.innerHTML = `
+        <div class="title-wrapper">
+            <h3 class="title-large">You May Also Like</h3>
+        </div>
+
+        <div class="slider-list">
+            <div class="slider-inner"></div>
+        </div>
+    `;
+
+    for (const movie of movieList){
+        const movieCard = createMovieCard(movie); // called from movie_card.js
+
+        movieListElem.querySelector(".slider-inner").appendChild(movieCard);
+    }
+
+
+    pageContent.appendChild(movieListElem);
+
+}
