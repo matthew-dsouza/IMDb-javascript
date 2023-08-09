@@ -782,7 +782,7 @@ body {
 
 .search-modal {
   position: fixed;
-  top: 96px;
+  top: 70px;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -909,8 +909,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  .search-box.active{
+  .search-box.active {
     padding: 1.5rem 0.6rem;
+  }
+  .search-modal {
+    top: 69px;
   }
 }
 
@@ -966,7 +969,7 @@ body {
   }
 
   .search-modal {
-    top: 104px;
+    top: 98px;
     padding: 60px;
   }
 
