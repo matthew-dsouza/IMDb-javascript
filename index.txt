@@ -1,12 +1,12 @@
-Tvflix
+Netflix
 
-Tvflix is a popular movie app made by matthewdsouza.
+Netflix is a popular movie app made by matthewdsouza.
 
 
 
 #---------- HEADER ----------#
 
-alt = Tvflix home
+alt = Netflix home
 
 aria-label = search movies
 placeholder = Search any movies...
