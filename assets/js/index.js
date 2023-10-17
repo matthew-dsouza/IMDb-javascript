@@ -106,7 +106,7 @@ const heroBanner = function ({ results: movieList }) {
 
             <div class="banner-content">
 
-                <h2 class="heading">${title}</h2>
+                <h2 class="heading movie-title-hero">${title}</h2>
 
                 <div class="meta-list">
                     <div class="meta-item">${release_date.split("-")[0]}</div>

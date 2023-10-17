@@ -1,12 +1,12 @@
-Netflix
+IMDb
 
-Netflix is a popular movie app made by matthewdsouza.
+IMDb is a popular movie app made by matthewdsouza.
 
 
 
 #---------- HEADER ----------#
 
-alt = Netflix home
+alt = IMDb home
 
 aria-label = search movies
 placeholder = Search any movies...

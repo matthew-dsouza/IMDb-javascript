@@ -61,7 +61,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
         videos: { results: videos }
     } = movie;
 
-    document.title = `${title} - Netflix`;
+    document.title = `${title} - IMDb`;
 
     const movieDetail = document.createElement("div");
     movieDetail.classList.add("movie-detail");
