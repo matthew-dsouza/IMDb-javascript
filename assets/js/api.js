@@ -1,6 +1,6 @@
 'use strict';
 
-const api_key = 'f26efb4f213ac5d91a9049a012a4d43c';
+const api_key = '594168ec414c03ba758aaac8b647ca71';
 const imageBaseURL = 'https://image.tmdb.org/t/p/';
 
 // fetch data from a server using the 'url' 

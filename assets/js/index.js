@@ -84,7 +84,7 @@ const heroBanner = function ({ results: movieList }) {
 
     let controlItemIndex = 0;
 
-    for (const [index, movie] of movieList.entries()) {
+    for (const [index, movie] of z()) {
 
         const {
             backdrop_path,
