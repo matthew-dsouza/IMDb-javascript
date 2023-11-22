@@ -55,7 +55,7 @@ fetchDataFromServer(
     }
 
     fetchDataFromServer(
-      `https://api.themoviedb.org/3/movie/popular/?api_key=${api_key}&page=1/`,
+      `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=1/`,
       heroBanner
     );
   }
