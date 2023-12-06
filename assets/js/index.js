@@ -102,7 +102,7 @@ const heroBanner = function ({ results: movieList }) {
                 <h2 class="heading movie-title-hero">${title}</h2>
 
                 <div class="meta-list">
-                    <div class="meta-item">${release_date.split("-")[0]}</div>
+                    <div class="meta-item">${release_date.split("-")[0]}</div> ·
 
                     <div class="meta-item card-badge">${vote_average.toFixed(
                       1

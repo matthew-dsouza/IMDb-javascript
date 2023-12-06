@@ -45,7 +45,7 @@ export function sidebar() {
 
         <div class="sidebar-footer">
 
-            <p class="copyright">Copyright 2023 <a href="https://github.com/matthew-dsouza">Matthew Dsouza</a>
+            <p class="copyright">Created by <a href="https://github.com/matthew-dsouza">Matthew Dsouza</a>
             </p>
 
             <img src="./assets/images/tmdb-logo.svg" width="130" height="17" alt="the movie database logo">
