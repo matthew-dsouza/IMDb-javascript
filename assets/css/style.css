@@ -234,7 +234,7 @@ body {
   gap: 0.25rem;
 }
 
-.meta-list > .meta-item:first-child{
+.meta-list > .meta-item:first-child {
   font-size: 2rem;
 }
 
@@ -266,6 +266,9 @@ body {
 .poster-box {
   background-image: url("../images/poster-bg-icon.png");
   aspect-ratio: 2 / 3;
+
+  /* float: left;
+  cursor: pointer; */
 }
 
 .poster-box,
