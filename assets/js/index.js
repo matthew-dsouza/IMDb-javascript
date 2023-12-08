@@ -39,11 +39,18 @@ const genreList = {
   asString(genreIdList) {
     let newGenreList = [];
 
+    // console.log(genreIdList);
+
     for (const genreId of genreIdList) {
+      // 
+      // console.log(genreId);
+
       this[genreId] && newGenreList.push(this[genreId]); // this === genreList;
     }
 
-    return newGenreList.join(", ");
+    // console.log(newGenreList.join(", "));
+    // return newGenreList.join(", ");
+    return newGenreList;
   },
 };
 
@@ -77,6 +84,7 @@ const heroBanner = function ({ results: movieList }) {
   let controlItemIndex = 0;
 
   for (const [index, movie] of movieList.entries()) {
+
     const {
       backdrop_path,
       title,
@@ -88,28 +96,30 @@ const heroBanner = function ({ results: movieList }) {
       id,
     } = movie;
 
+    var releaseDate = release_date?.split("-")[0];
+    // console.log(releaseDate);
+
     const sliderItem = document.createElement("div");
     sliderItem.classList.add("slider-item");
     sliderItem.setAttribute("slider-item", "");
 
     sliderItem.innerHTML = `
-            <img src="${imageBaseURL}w1280${backdrop_path}" alt="${title}" class="img-cover" loading=${
-      index === 0 ? "eager" : "lazy"
-    }>
+            <img src="${imageBaseURL}w1280${backdrop_path}" alt="${title}" class="img-cover" loading=${index === 0 ? "eager" : "lazy"
+      }>
 
             <div class="banner-content">
 
                 <h2 class="heading movie-title-hero">${title}</h2>
 
                 <div class="meta-list">
-                    <div class="meta-item">${release_date.split("-")[0]}</div> ·
+                    <div class="meta-item">${releaseDate}</div> ·
 
-                    <div class="meta-item card-badge">${vote_average.toFixed(
-                      1
-                    )}</div>
+                    <div class="meta-item card-badge">${vote_average?.toFixed(
+        1
+      )}</div>
                 </div>
 
-                <p class="genre">${genreList.asString(genre_ids)}</p>
+                <p class="genre">${genreList.genre_ids}</p>
 
                 <p class="banner-text">${overview}</p>
 
