@@ -1,6 +1,10 @@
 'use strict';
 
 import { imageBaseURL } from "./api.js";
+import {
+    toggleWatchlist,
+    isInWatchlist
+} from "./watchlist.js";
 
 /*
  * Movie Card
@@ -15,6 +19,8 @@ export function createMovieCard(movie) {
         release_date,
         id
     } = movie;
+
+    const saved = isInWatchlist(id);
 
     const card = document.createElement("div");
     card.classList.add("movie-card");
@@ -39,9 +45,34 @@ export function createMovieCard(movie) {
 
                     </div>
 
-                    <a href="./detail.html" class="card-btn" title="${title}" onclick="getMovieDetail(${id})"></a>
+                    <button
+                        class="watchlist-btn ${saved ? "active" : ""}"
+                    >
+                        ${saved ? "✓ Added" : "+ Watch Later"}
+                    </button>
+
+                    <a href="./detail.html"
+                    class="card-btn"
+                    title="${title}"
+                    onclick="getMovieDetail(${id})">
+                    </a>
     `;
 
+    const watchlistBtn = card.querySelector(".watchlist-btn");
+
+    watchlistBtn.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const added = toggleWatchlist(movie);
+
+        this.classList.toggle("active", added);
+
+        this.textContent =
+            added ? "✓ Added" : "+ Watch Later";
+    });
+
     return card;
-    
+
 }

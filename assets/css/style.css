@@ -266,9 +266,6 @@ body {
 .poster-box {
   background-image: url("../images/poster-bg-icon.png");
   aspect-ratio: 2 / 3;
-
-  /* float: left;
-  cursor: pointer; */
 }
 
 .poster-box,
@@ -709,6 +706,30 @@ body {
 .movie-card .card-btn {
   position: absolute;
   inset: 0;
+}
+
+.watchlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+
+  background-color: rgba(0,0,0,.8);
+  color: white;
+
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: 250ms ease;
+}
+
+.watchlist-btn.active {
+  background-color: var(--primary);
 }
 
 /*-----------------------------------*\
